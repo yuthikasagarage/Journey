@@ -50,7 +50,7 @@ const PlaceItem = (props) => {
         header={props.address}
         contentClass="place-item__modal-content"
         footerClass="place-item__modal-actions"
-        footer={<Button onClick={closeMapHandler}>CLOSE</Button>}
+        footer={<Button onClick={closeMapHandler}>Close</Button>}
       >
         <div className="map-container">
           <Map center={props.coordinates} zoom={16} />
@@ -64,10 +64,10 @@ const PlaceItem = (props) => {
         footer={
           <React.Fragment>
             <Button inverse onClick={cancelDeleteHandler}>
-              CANCEL
+              Cancel
             </Button>
             <Button danger onClick={confirmDeleteHandler}>
-              DELETE
+              Delete
             </Button>
           </React.Fragment>
         }
@@ -93,15 +93,15 @@ const PlaceItem = (props) => {
           </div>
           <div className="place-item__actions">
             <Button inverse onClick={openMapHandler}>
-              VIEW ON MAP
+              View on map
             </Button>
             {auth.userId === props.creatorId && (
-              <Button to={`/places/${props.id}`}>EDIT</Button>
+              <Button to={`/places/${props.id}`}>Edit</Button>
             )}
 
             {auth.userId === props.creatorId && (
               <Button danger onClick={showDeleteWarningHandler}>
-                DELETE
+                Delete
               </Button>
             )}
           </div>
