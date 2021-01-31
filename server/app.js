@@ -40,6 +40,8 @@ app.use((error, req, res, next) => {
   res.json({ message: error.message || "An unknown error occurred!" });
 });
 
+const port = process.env.PORT || 5000;
+
 mongoose
   .connect(url)
   .then(() => {
